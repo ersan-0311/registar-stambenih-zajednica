@@ -1,0 +1,36 @@
+.glavna-navigacija {
+  background: var(--boja-navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+}
+
+.glavna-navigacija .logo {
+  color: white;
+  font-family: var(--font-naslov);
+  font-size: 1.15rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.glavna-navigacija .linkovi {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.glavna-navigacija .linkovi a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.glavna-navigacija .linkovi a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}

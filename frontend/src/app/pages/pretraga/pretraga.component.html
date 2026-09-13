@@ -1,0 +1,81 @@
+<h1>Претрага</h1>
+
+<div class="pretraga-polje">
+  <input
+    type="text"
+    placeholder="Претражите по називу или адреси..."
+    [(ngModel)]="pretragaTekst"
+    (keyup.enter)="pretrazi()"
+  />
+  <button (click)="pretrazi()">Претражи</button>
+</div>
+
+@if (izabraneOpstine.length > 0) {
+  <div class="aktivni-filteri">
+    @for (opstina of izabraneOpstine; track opstina) {
+      <span class="aktivni-filter">
+        {{ opstina }}
+        <button (click)="izaberiOpstinu(opstina)">✕</button>
+      </span>
+    }
+  </div>
+}
+
+<div class="sadrzaj">
+  <aside class="filteri">
+    <h3>Општине</h3>
+    <ul>
+      @for (opstina of opstine; track opstina.opstina) {
+        <li
+          [class.aktivno]="izabraneOpstine.includes(opstina.opstina)"
+          (click)="izaberiOpstinu(opstina.opstina)"
+        >
+          {{ opstina.opstina }} ({{ opstina.brojZajednica }})
+        </li>
+      }
+    </ul>
+  </aside>
+
+  <main class="rezultati">
+    @if (ucitavanje) {
+      <p>Учитавање...</p>
+    }
+
+    @if (greska) {
+      <p>{{ greska }}</p>
+    }
+
+    @if (!ucitavanje && !greska) {
+      @if (rezultati.length === 0) {
+        <p>Нема резултата за задату претрагу.</p>
+      } @else {
+        <p>Укупно резултата: {{ ukupno }}</p>
+
+        <ul class="kartice">
+            @for (zajednica of rezultati; track zajednica._id) {
+                <li class="kartica">
+                <a [routerLink]="['/detalji', zajednica._id]">
+                    <strong>{{ zajednica.poslovnoIme }}</strong>
+                    <div>{{ zajednica.ulica }} {{ zajednica.kucniBroj }}</div>
+                    <div>{{ zajednica.opstina }}</div>
+                </a>
+                </li>
+            }
+        </ul>
+
+        @if (ukupnoStranica > 1) {
+          <div class="stranicovanje">
+            @for (broj of [].constructor(ukupnoStranica); track $index) {
+              <button
+                [class.aktivno]="trenutnaStranica === $index + 1"
+                (click)="idiNaStranicu($index + 1)"
+              >
+                {{ $index + 1 }}
+              </button>
+            }
+          </div>
+        }
+      }
+    }
+  </main>
+</div>

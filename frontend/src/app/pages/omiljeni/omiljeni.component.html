@@ -1,0 +1,24 @@
+<h1>Омиљени</h1>
+
+@if (ucitavanje) {
+  <p>Учитавање...</p>
+}
+
+@if (!ucitavanje && zajednice.length === 0) {
+  <p>Немате сачуваних стамбених заједница. <a routerLink="/pretraga">Претражите</a> и додајте неку у омиљене.</p>
+}
+
+@if (!ucitavanje && zajednice.length > 0) {
+  <ul class="kartice">
+    @for (zajednica of zajednice; track zajednica._id) {
+      <li class="kartica">
+        <a [routerLink]="['/detalji', zajednica._id]">
+          <strong>{{ zajednica.poslovnoIme }}</strong>
+          <div>{{ zajednica.ulica }} {{ zajednica.kucniBroj }}</div>
+          <div>{{ zajednica.opstina }}</div>
+        </a>
+        <button (click)="ukloni(zajednica._id)">Уклони</button>
+      </li>
+    }
+  </ul>
+}

@@ -1,0 +1,37 @@
+<div class="detalji-stranica">
+  @if (ucitavanje) {
+    <p>Учитавање...</p>
+  }
+
+  @if (greska) {
+    <p>{{ greska }}</p>
+  }
+
+  @if (!ucitavanje && !greska && zajednica) {
+    <h1>{{ zajednica.poslovnoIme }}</h1>
+
+    <dl>
+      <dt>Адреса</dt>
+      <dd>{{ zajednica.ulica }} {{ zajednica.kucniBroj }}</dd>
+
+      <dt>Општина</dt>
+      <dd>{{ zajednica.opstina }}</dd>
+
+      <dt>Округ</dt>
+      <dd>{{ zajednica.okrug }}</dd>
+    </dl>
+    <div class="akcije">
+      <button (click)="prebaciOmiljenu()">
+          {{ jeOmiljena() ? 'Уклони из омиљених' : 'Додај у омиљене' }}
+      </button>
+
+      <button (click)="kopirajLink()">
+          {{ linkKopiran ? 'Копирано!' : 'Копирај линк' }}
+      </button>
+
+      <button (click)="vratiSeNazad()">← Назад</button>
+    </div>
+
+    <div id="mini-mapa"></div>
+  }
+</div>

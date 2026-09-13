@@ -1,0 +1,11 @@
+
+.mapa-stranica h1 {
+  margin-bottom: 1rem;
+}
+
+#mapa-kontejner {
+  height: 600px;
+  width: 100%;
+  border: 1px solid var(--boja-ivica);
+  border-radius: var(--radijus);
+}

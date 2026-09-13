@@ -1,0 +1,36 @@
+<div class="pocetna">
+  <h1>Регистар стамбених заједница</h1>
+
+  <div class="pretraga-istaknuta">
+    <input
+      type="text"
+      placeholder="Претражите по називу или адреси..."
+      [(ngModel)]="pretragaTekst"
+      (keyup.enter)="pretrazi()"
+    />
+    <button (click)="pretrazi()">Претражи</button>
+  </div>
+
+  @if (statistika) {
+    <div class="brojke">
+      <div>
+        <strong>{{ statistika.ukupnoZajednica }}</strong>
+        <span>регистрованих стамбених заједница</span>
+      </div>
+      <div>
+        <strong>{{ statistika.ukupnoOpstina }}</strong>
+        <span>општина</span>
+      </div>
+      @if (statistika.datumUvoza) {
+        <div class="datum-azurnosti">
+          Подаци ажурирани: {{ statistika.datumUvoza | date: 'dd.MM.yyyy.' }}
+        </div>
+      }
+    </div>
+  }
+
+  <div class="dugmad">
+    <a routerLink="/pretraga">Прегледај све</a>
+    <a routerLink="/mapa">Прикажи на мапи</a>
+  </div>
+</div>

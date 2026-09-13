@@ -1,0 +1,71 @@
+:root {
+  --boja-navy: #1B3A5C;
+  --boja-akcent: #1F5C99;
+  --boja-pozadina: #F7F8FA;
+  --boja-povrsina: #FFFFFF;
+  --boja-tekst: #1A1F26;
+  --boja-tekst-sekundarni: #5B6570;
+  --boja-ivica: #D8DEE4;
+
+  --font-naslov: 'PT Serif', serif;
+  --font-tekst: 'PT Sans', sans-serif;
+
+  --radijus: 3px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-tekst);
+  background: var(--boja-pozadina);
+  color: var(--boja-tekst);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-naslov);
+  font-weight: 700;
+  color: var(--boja-navy);
+  margin-top: 0;
+}
+
+a {
+  color: var(--boja-akcent);
+}
+
+button {
+  font-family: var(--font-tekst);
+  background: var(--boja-akcent);
+  color: white;
+  border: none;
+  border-radius: var(--radijus);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--boja-navy);
+}
+
+input[type="text"] {
+  font-family: var(--font-tekst);
+  border: 1px solid var(--boja-ivica);
+  border-radius: var(--radijus);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+
+.leaflet-popup-content {
+  font-family: var(--font-tekst);
+  font-size: 0.9rem;
+}
+
+.leaflet-popup-content a {
+  color: var(--boja-akcent);
+  font-weight: 700;
+}

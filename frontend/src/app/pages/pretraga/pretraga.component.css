@@ -1,0 +1,147 @@
+.pretraga-polje {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.pretraga-polje input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+}
+
+.aktivni-filteri {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.aktivni-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--boja-povrsina);
+  border: 1px solid var(--boja-akcent);
+  color: var(--boja-akcent);
+  border-radius: var(--radijus);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+}
+
+.aktivni-filter button {
+  background: none;
+  color: var(--boja-akcent);
+  padding: 0;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.aktivni-filter button:hover {
+  background: none;
+  color: var(--boja-navy);
+}
+
+.sadrzaj {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.filteri {
+  flex: 0 0 220px;
+  border: 1px solid var(--boja-ivica);
+  border-radius: var(--radijus);
+  padding: 1rem;
+  background: var(--boja-povrsina);
+}
+
+.filteri h3 {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.filteri ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.filteri li {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: var(--radijus);
+}
+
+.filteri li:hover {
+  background: var(--boja-pozadina);
+}
+
+.filteri li.aktivno {
+  background: var(--boja-akcent);
+  color: white;
+}
+
+.rezultati {
+  flex: 1;
+  min-width: 0;
+}
+
+.kartice {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.kartica {
+  border: 1px solid var(--boja-ivica);
+  border-radius: var(--radijus);
+  background: var(--boja-povrsina);
+}
+
+.kartica a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.kartica:hover {
+  border-color: var(--boja-akcent);
+}
+
+.kartica strong {
+  color: var(--boja-navy);
+  font-size: 1.05rem;
+}
+
+.kartica div {
+  font-size: 0.9rem;
+  color: var(--boja-tekst-sekundarni);
+  margin-top: 0.2rem;
+}
+
+.stranicovanje {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+.stranicovanje button {
+  background: var(--boja-povrsina);
+  color: var(--boja-tekst);
+  border: 1px solid var(--boja-ivica);
+  min-width: 2.2rem;
+  padding: 0.4rem;
+}
+
+.stranicovanje button.aktivno {
+  background: var(--boja-akcent);
+  color: white;
+  border-color: var(--boja-akcent);
+}

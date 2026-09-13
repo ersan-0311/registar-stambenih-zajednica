@@ -1,0 +1,58 @@
+.detalji-stranica {
+  max-width: 700px;
+}
+
+.detalji-stranica dl {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0.6rem 1rem;
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--boja-ivica);
+  border-bottom: 1px solid var(--boja-ivica);
+}
+
+.detalji-stranica dt {
+  color: var(--boja-tekst-sekundarni);
+  font-size: 0.9rem;
+}
+
+.detalji-stranica dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.detalji-stranica .akcije {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.detalji-stranica .akcije button:nth-child(2) {
+  background: none;
+  border: 1px solid var(--boja-akcent);
+  color: var(--boja-akcent);
+}
+
+.detalji-stranica .akcije button:nth-child(2):hover {
+  background: var(--boja-pozadina);
+}
+
+.detalji-stranica .akcije button:nth-child(3) {
+  background: none;
+  color: var(--boja-tekst-sekundarni);
+  padding-left: 0;
+}
+
+.detalji-stranica .akcije button:nth-child(3):hover {
+  background: none;
+  color: var(--boja-tekst);
+  text-decoration: underline;
+}
+
+#mini-mapa {
+  height: 300px;
+  width: 100%;
+  border: 1px solid var(--boja-ivica);
+  border-radius: var(--radijus);
+}
